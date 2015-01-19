@@ -2,10 +2,54 @@
 <head>
   <meta charset="utf-8" />
   <title>jInvertScroll Demo Page</title>
-  <link rel="stylesheet" href="css/example.css" />
-</head>
+  <link rel="stylesheet" href="examples/css/example.css" />
+  <!---Map Highlight-->
+  <script type="text/javascript" src="dist/js/jquery.maphilight.min.js"></script>
 
 <body>
+  <h1>jInvertScroll Example</h1>
+
+  <div class="horizon scroll">
+    <img src="examples/images/sky.jpg" alt="" />
+  </div>
+  <div class="middle scroll">
+
+    <img src="examples/images/southafrica_2048_2.png" class="inline" alt="" />
+  </div>
+  <div class="front scroll">
+    <img src="examples/images/carter.png" alt="" class="human1"/>
+<img src="examples/images/cranston.png" alt="" class="human2" usemap="#cranstonMap" />
+    <map name="cranstonMap">
+      <area shape="poly" coords="65,0,90,18,90,25,91,32,84,47,120,63,122,80,116,147,121,180,127,199,114,207,116,238,111,263,116,272,119,298,120,318,136,352,136,353,108,343,94,335,91,310,84,291,83,268,70,218,61,252,54,294,48,335,36,340,33,346,7,349,7,348,22,321,21,312,25,302,25,280,30,258,28,207,17,201,22,166,24,151,12,133,21,62,55,50,50,33,52,21,53,12" href="examples/images/cranston.png" alt="cranstonPath" title="cranstonPath"/>
+    </map>
+
+    <img src="examples/images/dorothy.png" alt="" class="human3"/>
+    <img src="examples/images/dubo.png" alt="" class="human4"/>
+    <img src="examples/images/lola.png" alt="" class="human5" />
+  </div>
+
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="dist/js/jquery.jInvertScroll.js"></script>
+<script type="text/javascript">
+(function($) {
+  var elem = $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+  {
+    height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+    onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+      console.log(percent);
+    }
+  });
+
+  $(window).resize(function() {
+    if ($(window).width() <= 768) {
+      elem.destroy();
+    }
+    else {
+      elem.reinitialize();
+    }
+  });
+}(jQuery));
+</script>
 </body>
 
 </html>

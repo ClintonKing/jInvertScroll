@@ -1,16 +1,25 @@
+
+.inline{
+  display:inline;
+}
+
 html,
 body
 {
   padding: 0;
   margin: 0;
   font-family: Arial, sans-serif;
+
 }
 
 /* hide horizontal scrollbars, since we use the vertical ones to scroll to the right */
 body
 {
   overflow-x: hidden;
-  background: url('../images/bg.jpg') repeat top left;
+  /*background-image: url('../images/sky.jpg');
+  background-repeat: no-repeat;
+  background-position: left top; */
+  background: url('../images/bg.jpg') repeat top left;*/
 }
 
 h1
@@ -35,16 +44,49 @@ h1
   * z-index ordering of the different layers, do this for your layers,
   * also assign absolute width (to prevent issues if the script gets executed before the images get loaded)
   */
+
+.human1{
+  position: relative;
+  left: 1000px;
+  top: 10px;
+  height: 300px;
+  width: auto;
+}
+.human2{
+  position: relative;
+  left: 1900px;
+  top:100px;
+}
+
+.human3{
+  position: relative;
+  left: 2700px;
+  top:100px;
+}
+.human4{
+  position: relative;
+  left: 3300px;
+  top:100px;
+}
+.human5{
+  position: relative;
+  left: 4500px;
+  top:100px;
+}
+
+
 .horizon
 {
   z-index: 1;
   width: 3000px;
+
 }
 
 .middle
 {
   z-index: 500;
   width: 4000px;
+
 }
 
 .front
